@@ -1,0 +1,30 @@
+{
+  "name": "udeals",
+  "version": "1.0.0",
+  "description": "we got the deals",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcolla/UDeals.git"
+  },
+  "keywords": [
+    "UD",
+    "deals",
+    "food",
+    "newark"
+  ],
+  "author": "Dan Marco Richard Jeanine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcolla/UDeals/issues"
+  },
+  "homepage": "https://github.com/marcolla/UDeals#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33",
+    "mongoose": "^4.13.2"
+  }
+}

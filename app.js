@@ -1,0 +1,81 @@
+var MongoClient = require('mongodb').MongoClient
+, assert = require('assert');
+
+var mongoose = require('mongoose');
+
+
+// Connection URL
+var url = 'mongodb://localhost:27017/UDeals';
+
+mongoose.connect(url);
+
+var dealSchema = mongoose.Schema({
+    offer: {
+        type: String,
+        lowercase: true,
+        unique: true,
+        required: true
+    },
+    details: {
+        name: {type: String},
+        addresss: {type: String},
+        day: {type: String},
+        time: {type: String},
+        description: {type: String},
+        deliver: {type: Boolean},
+        link: {type: String},
+        recurring: {type: Boolean}
+    }
+});
+
+dealSchema.methods.speak = function () {
+    var greeting = this.details.name
+      ? "Meow name is " + this.details.name
+      : "I don't have a name";
+      console.log(greeting);
+}
+
+var Deal = mongoose.model('Deal', dealSchema);
+
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+    console.log("Connected successfully to server");
+
+
+
+    var bdubs = new Deal({ offer: 'Wing Night!', details: {name:'bdubs', addresss: 'main street',
+    day: 'tuesday',
+    time: 'all day',
+    description: 'half priced wings',
+    deliver: false,
+    link: 'www.bdubs.com probably',
+    recurring: true } });
+    console.log(bdubs.details.name); // 'Silence'
+
+      
+
+    //   var fluffy = new Kitten({ name: 'fluffy' });
+      bdubs.speak(); // "Meow name is fluffy"
+
+    //   bdubs.save(function (err, bdubs) {
+    //     if (err) return console.error(err);
+    //     bdubs.speak();
+    //  });
+
+      Deal.find(function (err, deals) {
+        if (err) return console.error(err);
+        console.log(deals);
+      })
+
+      //Kitten.find({ name: /^fluff/ }, callback);
+});
+
+// Use connect method to connect to the server
+// MongoClient.connect(url, function(err, db) {
+// assert.equal(null, err);
+// console.log("Connected successfully to server");
+
+// db.close();
+// });
