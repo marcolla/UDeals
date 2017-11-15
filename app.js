@@ -72,6 +72,33 @@ db.once('open', function() {
       //Kitten.find({ name: /^fluff/ }, callback);
 });
 
+
+
+var express = require('express');
+var app = express();
+
+app.get('/hello', function(req, res){
+    Deal.find(function (err, deals) {
+        if (err) return console.error(err);
+        res.send(deals);
+      })
+});
+
+app.post('/hello', function(req, res){
+   res.send("You just called the post method at '/hello'!\n");
+});
+
+// app.all('/test', function(req, res){
+//     res.send("HTTP method doesn't have any effect on this route!");
+//  });
+
+//  var things = require('./things.js');
+
+//  app.use('/things', things);
+ 
+app.listen(3000);
+
+
 // Use connect method to connect to the server
 // MongoClient.connect(url, function(err, db) {
 // assert.equal(null, err);
