@@ -1,5 +1,5 @@
 //const testController=require('./controllers/test-controller'),
-udealsController=require('./controllers/udeals.controller'),
+const udealsController=require('./controllers/udeals.controller'),
 express = require('express');
 
 

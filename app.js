@@ -92,7 +92,7 @@ app.post('/hello', function(req, res){
 
 //  app.use('/things', things);
  
-app.listen(3000);
+//app.listen(3000);
 router(app);
 
 
