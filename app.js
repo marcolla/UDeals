@@ -7,7 +7,8 @@ assert = require('assert'),
 mongoose = require('mongoose'),
 router = require('./router'),
 config = require('./config/config'),
-dealSchema = require('./models/udeal');
+dealSchema = require('./models/udeal'),
+controller = require('./controllers/udeals.controller');
 
 
 // Connection URL
@@ -73,11 +74,8 @@ db.once('open', function() {
 });
 
 
-app.get('/hello', function(req, res){
-    Deal.find(function (err, deals) {
-        if (err) return console.error(err);
-        res.send(deals);
-      })
+app.get('/hello', function(req, res, next){
+    controller.getUDeals(req,res,next);
 });
 
 app.post('/hello', function(req, res){
