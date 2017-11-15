@@ -10,7 +10,7 @@ var url = 'mongodb://localhost:27017/UDeals';
 
 mongoose.connect(url);
 
-var Deal = mongoose.model('Deal', dealSchema);
+var Deal = mongoose.model('Deal', dealSchema.dealSchema);
 
 
 var db = mongoose.connection;
@@ -51,6 +51,9 @@ db.once('open', function() {
 
 var express = require('express');
 var app = express();
+
+
+
 
 app.get('/hello', function(req, res){
     Deal.find(function (err, deals) {
