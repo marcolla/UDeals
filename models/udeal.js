@@ -20,4 +20,10 @@ var dealSchema = mongoose.Schema({
     }
 });
 
+dealSchema.methods.speak = function () {
+    var greeting = this.details.name
+      ? "Meow name is " + this.details.name
+      : "I don't have a name";
+      console.log(greeting);
+}
 module.exports = mongoose.model('Deal', dealSchema);

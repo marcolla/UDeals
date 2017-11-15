@@ -15,7 +15,7 @@ exports.createUDeal=function(req,res,next){
     deliver: false,
     link: 'www.bdubs.com probably',
     recurring: true }});
-    
+
     u.save(function(err,udeal){
         res.status(200).json(udeal);
     });

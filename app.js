@@ -1,20 +1,14 @@
-var MongoClient = require('mongodb').MongoClient
-, assert = require('assert');
-
-var mongoose = require('mongoose');
+var MongoClient = require('mongodb').MongoClient, 
+assert = require('assert'),
+mongoose = require('mongoose'),
+router = require('./router'),
+dealSchema = require('./models/udeal');
 
 
 // Connection URL
 var url = 'mongodb://localhost:27017/UDeals';
 
 mongoose.connect(url);
-
-dealSchema.methods.speak = function () {
-    var greeting = this.details.name
-      ? "Meow name is " + this.details.name
-      : "I don't have a name";
-      console.log(greeting);
-}
 
 var Deal = mongoose.model('Deal', dealSchema);
 
