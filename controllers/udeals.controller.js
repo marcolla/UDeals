@@ -1,8 +1,8 @@
 const UDeal=require('../models/udeal');
 
-exports.getUDeal=function(req,res,next){
+exports.getUDeals=function(req,res,next){
     UDeal.find({},function(err,udeal){
-        res.status(201).json(udeal);
+        res.status(201).json(udeal)
     });
 }
 

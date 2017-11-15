@@ -19,3 +19,4 @@ router = require('./router');
  app.use('/things', things);
  
 app.listen(3000);
+router(app);

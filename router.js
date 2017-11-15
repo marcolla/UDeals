@@ -7,9 +7,9 @@ module.exports = function(app) {
     // Initializing route groups
     const apiRoutes = express.Router();
     const udealRoutes = express.Router();
-    udealRoutes.get('/',udealController.getUsers);
+    udealRoutes.get('/',udealsController.getUDeals);
     //udealRoutes.get('/:id',udealController.getUser);
-    udealRoutes.post('/',udealController.createUDeal);
+    udealRoutes.post('/',udealsController.createUDeal);
 
     apiRoutes.use('/udeals',udealRoutes);
 
