@@ -8,12 +8,12 @@ exports.getUDeals=function(req,res,next){
 
 exports.createUDeal=function(req,res,next){
     console.log(req.body);
-    var u=new UDeal({ offer: 'Dollar Beers', details: {name:'bdubs', addresss: 'main street',
-    day: 'tuesday',
+    var u=new UDeal({ offer: 'Half Priced Full Size Macs', details: {name:'Mad Macs and Matildas', addresss: 'main street',
+    day: 'Monday',
     time: 'all day',
-    description: 'dollar beers, duh',
+    description: '50% off full sized macs (lobster mac excluded from this deal)',
     deliver: false,
-    link: 'www.bdubs.com probably',
+    link: 'www.madmacs.com maybe',
     recurring: true }});
 
     u.save(function(err,udeal){
