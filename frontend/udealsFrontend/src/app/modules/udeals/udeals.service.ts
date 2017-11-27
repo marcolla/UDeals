@@ -19,4 +19,12 @@ export class UdealsService {
       console.log(x.json);
       return x.json();
     })
+
+
+    postDeals = () => this.http.post(
+      this.baseUri,
+      { headers: this.headers }).map(x => {
+        console.log(x.json);
+        return x.json();
+      })
 }
