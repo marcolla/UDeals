@@ -22,6 +22,18 @@ export class DealsComponent implements OnInit {
 
 
   postDeal() {
+    var dealJSON = 
+    "{ offer: " + document.getElementById("offer") + 
+    ", details: { name: " + document.getElementById("name") + 
+    ", address: " + document.getElementById("address") +
+    ", day: " + document.getElementById("day") +
+    ", time: " + document.getElementById("time") +
+    ", description: " + document.getElementById("description") +
+    ", deliver: " + document.getElementById("deliver") +
+    ", link: " + document.getElementById("link") +
+    ", recurring: " + document.getElementById("recurring") +
+    "}}";
+
     this._apiSVC.postDeals().subscribe(y => {
     });
   }
