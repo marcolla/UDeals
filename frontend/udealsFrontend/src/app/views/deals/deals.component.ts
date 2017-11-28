@@ -23,18 +23,20 @@ export class DealsComponent implements OnInit {
 
   postDeal() {
     var dealJSON = 
-    "{ offer: " + document.getElementById("offer") + 
-    ", details: { name: " + document.getElementById("name") + 
-    ", address: " + document.getElementById("address") +
-    ", day: " + document.getElementById("day") +
-    ", time: " + document.getElementById("time") +
-    ", description: " + document.getElementById("description") +
-    ", deliver: " + document.getElementById("deliver") +
-    ", link: " + document.getElementById("link") +
-    ", recurring: " + document.getElementById("recurring") +
-    "}}";
+    '{ "offer" : "' + (<HTMLInputElement>document.getElementById("offer")).value + 
+    '", "details" : { "name": "' + (<HTMLInputElement>document.getElementById("name")).value + 
+    '", "address": "' + (<HTMLInputElement>document.getElementById("address")).value +
+    '", "day": "' + (<HTMLInputElement>document.getElementById("day")).value +
+    '", "time": "' + (<HTMLInputElement>document.getElementById("time")).value +
+    '", "description": "' + (<HTMLInputElement>document.getElementById("description")).value +
+    '", "deliver": "' + (<HTMLInputElement>document.getElementById("deliver")).value +
+    '", "link": "' + (<HTMLInputElement>document.getElementById("link")).value +
+    '", "recurring": "' + (<HTMLInputElement>document.getElementById("recurring")).value +
+    '"}}';
 
-    this._apiSVC.postDeals().subscribe(y => {
+    console.log(dealJSON);
+
+    this._apiSVC.postDeals(dealJSON).subscribe(y => {
     });
   }
 

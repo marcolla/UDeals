@@ -21,10 +21,9 @@ export class UdealsService {
     })
 
 
-    postDeals = () => this.http.post(
-      this.baseUri,
-      { headers: this.headers }).map(x => {
-        console.log(x.json);
-        return x.json();
-      })
+    postDeals = (input) => this.http.post(
+      this.baseUri, input, { headers: this.headers })
+
+
+
 }
