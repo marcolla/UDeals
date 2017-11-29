@@ -30,6 +30,8 @@ exports.createUDeal=function(req,res,next){
     });
 }
 
-exports.findUDeal=function(req,res,next){
-    
-}
+    exports.findUDeal=function(req,res,next){
+        var deal = UDeal.findOne({ offer: req.body.offer}, function(err,udeal){
+            res.status(201).json(udeal)
+        });
+    }

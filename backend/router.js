@@ -10,6 +10,7 @@ module.exports = function(app) {
     udealRoutes.get('/',udealsController.getUDeals);
     //udealRoutes.get('/:id',udealController.getUser);
     udealRoutes.post('/',udealsController.createUDeal);
+    udealRoutes.put('/',udealsController.findUDeal);
 
     apiRoutes.use('/udeals',udealRoutes);
 
