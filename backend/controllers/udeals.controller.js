@@ -37,9 +37,16 @@ exports.createUDeal=function(req,res,next){
     }
 
     exports.editUDeal = function(req,res,next) {
-        var deal = UDeal.updateOne({offer: "wing night!"},
-         { $set: { details: {name: "WIIINNNGGGS"} } },
-        function(err, udeal) {
-            res.status(201).json(udeal)
-        })
+        var deal = UDeal.updateOne({offer: req.body.offer},
+            { $set: { details:{name:req.body.details.name,
+            address:req.body.details.address,
+            day: req.body.details.day,
+            time: req.body.details.time,
+            description: req.body.details.description,
+            deliver: req.body.details.deliver,
+            link: req.body.details.link,
+            recurring: req.body.details.recurring} } },
+            function(err, udeal) {
+                res.status(201).json(udeal)
+            })
     }
