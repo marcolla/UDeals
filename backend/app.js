@@ -70,7 +70,7 @@ db.once('open', function() {
         console.log(deals);
       })
 
-      //Kitten.find({ name: /^fluff/ }, callback);
+      //Deal.find({ name: /^wing/ }, callback);
 });
 
 

@@ -35,3 +35,11 @@ exports.createUDeal=function(req,res,next){
             res.status(201).json(udeal)
         });
     }
+
+    exports.editUDeal = function(req,res,next) {
+        var deal = UDeal.updateOne({offer: "wing night!"},
+         { $set: { details: {name: "WIIINNNGGGS"} } },
+        function(err, udeal) {
+            res.status(201).json(udeal)
+        })
+    }
