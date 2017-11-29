@@ -40,4 +40,23 @@ export class DealsComponent implements OnInit {
     });
   }
 
+  putDeal() {
+    var dealJSON = 
+    '{ "offer" : "' + (<HTMLInputElement>document.getElementById("offer")).value + 
+    '", "details" : { "name": "' + (<HTMLInputElement>document.getElementById("name")).value + 
+    '", "address": "' + (<HTMLInputElement>document.getElementById("address")).value +
+    '", "day": "' + (<HTMLInputElement>document.getElementById("day")).value +
+    '", "time": "' + (<HTMLInputElement>document.getElementById("time")).value +
+    '", "description": "' + (<HTMLInputElement>document.getElementById("description")).value +
+    '", "deliver": "' + (<HTMLInputElement>document.getElementById("deliver")).value +
+    '", "link": "' + (<HTMLInputElement>document.getElementById("link")).value +
+    '", "recurring": "' + (<HTMLInputElement>document.getElementById("recurring")).value +
+    '"}}';
+
+    console.log(dealJSON);
+
+    this._apiSVC.putDeals(dealJSON).subscribe(y => {
+    });
+  }
+
 }
