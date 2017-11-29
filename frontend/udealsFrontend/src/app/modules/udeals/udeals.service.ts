@@ -21,9 +21,14 @@ export class UdealsService {
     })
 
 
-    postDeals = (input) => this.http.post(
-      this.baseUri, input, { headers: this.headers })
+  postDeals = (input) => this.http.post(
+    this.baseUri, input, { headers: this.headers })
+  
+
+  putDeals = (input) => this.http.put(
+    this.baseUri, input, { headers: this.headers })
 
 
 
-}
+
+  }
