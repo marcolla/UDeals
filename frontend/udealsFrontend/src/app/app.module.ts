@@ -7,11 +7,13 @@ import { DealsComponent } from './views/deals/deals.component';
 import { UdealsModule } from './modules/udeals/udeals.module';
 
 import {AppRoutingModule } from './app-routing.module';
+import { DealCreationComponent } from './views/deal-creation/deal-creation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DealsComponent
+    DealsComponent,
+    DealCreationComponent
   ],
   imports: [
     BrowserModule,
