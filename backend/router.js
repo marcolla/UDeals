@@ -11,6 +11,7 @@ module.exports = function(app) {
     //udealRoutes.get('/:id',udealController.getUser);
     udealRoutes.post('/',udealsController.createUDeal);
     udealRoutes.put('/',udealsController.editUDeal);
+    udealRoutes.delete('/',udealsController.deleteUDeal);
 
     apiRoutes.use('/udeals',udealRoutes);
 

@@ -50,3 +50,10 @@ exports.createUDeal=function(req,res,next){
                 res.status(201).json(udeal)
             })
     }
+
+    exports.deleteUDeal = function(req,res,next) {
+        var deal = UDeal.remove({offer: req.body.offer}, 
+            function(err, udeal) {
+                res.status(201).json(udeal)
+            })
+    }

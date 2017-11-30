@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { RequestOptions } from '@angular/http';
 
 @Injectable()
 export class UdealsService {
@@ -28,6 +29,11 @@ export class UdealsService {
   putDeals = (input) => this.http.put(
     this.baseUri, input, { headers: this.headers })
 
+  deleteDeals = (input) => this.http.delete(
+    this.baseUri, new RequestOptions({  
+      headers: this.headers,
+      body: input
+    }))
 
 
 

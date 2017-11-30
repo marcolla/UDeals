@@ -59,4 +59,14 @@ export class DealsComponent implements OnInit {
     });
   }
 
+  deleteDeal() {
+    var dealJSON = 
+    '{ "offer" : "' + (<HTMLInputElement>document.getElementById("offer")).value + '" }';
+
+    console.log(dealJSON);
+
+    this._apiSVC.deleteDeals(dealJSON).subscribe(y => {
+    });
+  }
+
 }
