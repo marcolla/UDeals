@@ -5,16 +5,34 @@
 
 <div id="postReq">
     
-      <p>Offer: </p> <input id = "offer" type = "text">
-      <p>Name: </p> <input id = "name" type = "text" >
-      <p>Address: </p> <input id = "address" type = "text">
-      <p>Day: </p> <input id = "day" type = "text">
-      <p>Time: </p> <input id = "time" type = "text">
-      <p>Description: </p> <input id = "description" type = "text">
-      <p>Deliver: </p>  <input id = "deliver" type = "text">
-      <p>Link: </p> <input id = "link" type = "text">
-      <p>Recurring: </p> <input id = "recurring" type = "text">
-    
+      <p>Offer:  <input id = "offer" type = "text"> </p>
+
+
+      <div class="dropdown">
+          <button (click)="myFunction()" class="dropbtn">Dropdown</button>
+            <div id="myDropdown" class="dropdown-content">
+              <input type="text" placeholder="Search.." id="myInput" (keyup)="filterFunction()">
+              <a>Alcohol</a>
+              <a>Burgers</a>
+              <a href="#blog">Blog</a>
+              <a href="#contact">Contact</a>
+              <a href="#custom">Custom</a>
+              <a href="#support">Support</a>
+              <a href="#tools">Tools</a>
+            </div>
+          </div>
+
+
+      <p>Name:   <input id = "name" type = "text" > </p>
+      <p>Address: <input id = "address" type = "text"> </p>
+      <p>Day:  <input id = "day" type = "text"> </p>
+      <p>Time:  <input id = "time" type = "text"> </p>
+      <p>Description:  <input id = "description" type = "text"> </p>
+      <p>Deliver:   <input id = "deliver" type = "text"> </p>
+      <p>Link:  <input id = "link" type = "text"> </p>
+      <p>Recurring:  <input id = "recurring" type = "text"> </p>
+
+      
     
       <button (click)='postDeal()'> POST </button>
     
