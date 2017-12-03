@@ -9,7 +9,7 @@ import { UdealsService } from '../../modules/udeals/udeals.service';
 })
 export class DealCreationComponent implements OnInit {
   _apiSVC: UdealsService;
-  tagsArray: [string];
+  tagsArray: string[] = [];
   event: MouseEvent;
 
   constructor(private _apiSvc: UdealsService) {
@@ -61,8 +61,9 @@ export class DealCreationComponent implements OnInit {
     var target = event.target || event.srcElement || event.currentTarget;
     var tagID = target.attributes.id; 
     var tag = document.getElementById(tagID.nodeValue).textContent;
-    console.log(document.getElementById(tagID.nodeValue).textContent);
+    
     this.tagsArray.push(tag);
+    console.log(this.tagsArray);
   }
 
   addToTagArray(){
