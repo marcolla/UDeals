@@ -1,6 +1,20 @@
 .background{
-    background-image: url("campus.gif"); 
-    background-size: 100% 100%; 
-    height: 400px; 
-    width: 1100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: url("http://media1.giphy.com/media/2LqQkIPKNevkc/giphy.gif"); 
+    background-repeat:repeat-x;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 0px;
+    font-family: Arial Rounded MT Bold’, Helvetica, Arial, sans-serif;
+    color: white;
+    font-size: 120px;
+    -webkit-text-stroke: 3px black;
+    -webkit-transition: width 2s, height 4s; /* Safari */
+    transition: width 2s, height 4s;
+
+    
+
 }
