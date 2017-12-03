@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UdealsService } from '../../modules/udeals/udeals.service';
 
+
 @Component({
   selector: 'app-deal-creation',
   templateUrl: './deal-creation.component.html',
@@ -8,8 +9,12 @@ import { UdealsService } from '../../modules/udeals/udeals.service';
 })
 export class DealCreationComponent implements OnInit {
   _apiSVC: UdealsService;
+  tagsArray: [string];
+  event: MouseEvent;
 
-  constructor() { }
+  constructor(private _apiSvc: UdealsService) {
+    this._apiSVC = _apiSvc;
+  }
 
   ngOnInit() {
   }
@@ -52,8 +57,22 @@ export class DealCreationComponent implements OnInit {
     }
   }  
 
+  onEvent(event){
+    var target = event.target || event.srcElement || event.currentTarget;
+    var tagID = target.attributes.id; 
+    var tag = document.getElementById(tagID.nodeValue).textContent;
+    console.log(document.getElementById(tagID.nodeValue).textContent);
+    this.tagsArray.push(tag);
+  }
+
   addToTagArray(){
-    
+      
+  //   document.addEventListener(MouseEvent, function(e) {
+  //     e = e || window.event;
+  //     var target = e.target || e.srcElement,
+  //         text = target.textContent || text.innerText;   
+  // }, false);
+
   }
 
 
