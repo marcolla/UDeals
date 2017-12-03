@@ -52,7 +52,9 @@ export class DealCreationComponent implements OnInit {
     }
   }  
 
-
+  addToTagArray(){
+    
+  }
 
 
 }
