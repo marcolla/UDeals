@@ -16,7 +16,8 @@ var dealSchema = mongoose.Schema({
         description: {type: String},
         deliver: {type: Boolean},
         link: {type: String},
-        recurring: {type: Boolean}
+        recurring: {type: Boolean},
+        tags: {type: [String]}
     }
 });
 

@@ -30,6 +30,7 @@ export class DealCreationComponent implements OnInit {
     '", "deliver": "' + (<HTMLInputElement>document.getElementById("deliver")).value +
     '", "link": "' + (<HTMLInputElement>document.getElementById("link")).value +
     '", "recurring": "' + (<HTMLInputElement>document.getElementById("recurring")).value +
+    '", "tags": "' + this.tagsArray +
     '"}}';
 
     console.log(dealJSON);
