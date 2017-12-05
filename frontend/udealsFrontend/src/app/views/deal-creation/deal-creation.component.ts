@@ -11,6 +11,7 @@ export class DealCreationComponent implements OnInit {
   _apiSVC: UdealsService;
   tagsArray: string[] = [];
   event: MouseEvent;
+  tagCount: number = 0;
 
   constructor(private _apiSvc: UdealsService) {
     this._apiSVC = _apiSvc;
@@ -57,24 +58,73 @@ export class DealCreationComponent implements OnInit {
     }
   }  
 
+
+  deleteTag(event){
+    
+        var target = event.target || event.srcElement || event.currentTarget;
+        var tagID = target.attributes.id; 
+        var tag = document.getElementById(tagID.nodeValue).textContent;
+       //Remove tag from array
+        for(var i = 0; i < this.tagsArray.length; i++){
+          if(this.tagsArray[i] == tag){
+            this.tagsArray.splice(i,1);
+          }
+        }
+       //Remove tag button
+        document.getElementById(tagID.nodeValue).removeChild(document.getElementById(tagID.nodeValue));
+      }
+
+  
   onEvent(event){
     var target = event.target || event.srcElement || event.currentTarget;
     var tagID = target.attributes.id; 
     var tag = document.getElementById(tagID.nodeValue).textContent;
     
     this.tagsArray.push(tag);
-    console.log(this.tagsArray);
+    //console.log(this.tagsArray);
+
+    var tagBtn = document.createElement("BUTTON");
+    var tagText = document.createTextNode(tag);
+    tagBtn.appendChild(tagText);
+    tagBtn.className = "tagButton";
+    tagBtn.id = `b${this.tagCount}`;
+    this.tagCount++;
+    
+    //tagBtn.attributes.onclick = this.deleteTag(event);
+    // tagBtn.style.position = "relative";
+    // tagBtn.style.top = "500px";
+    // console.log(tagBtn.className);
+    document.getElementById("tagContainer").appendChild(tagBtn);
+
+
+    var currentTagsArray = this.tagsArray;
+
+
+    
+
+    //console.log(document.getElementsByClassName("tagButton"));
+    var numButtons = document.getElementsByClassName("tagButton").length;
+
+    document.getElementsByClassName("tagButton")[numButtons - 1].addEventListener(
+      'click', 
+      function(){ 
+        console.log(this);
+        var bTag = this.textContent;
+        //Remove tag from array
+        for(var i = 0; i < currentTagsArray.length; i++){
+          if(currentTagsArray[i] == bTag){
+            currentTagsArray.splice(i,1);
+            console.log(currentTagsArray);
+          }
+        }
+        //Remove tag button
+        this.remove(); 
+      });
+
+    this.tagsArray = currentTagsArray;
   }
 
-  addToTagArray(){
-      
-  //   document.addEventListener(MouseEvent, function(e) {
-  //     e = e || window.event;
-  //     var target = e.target || e.srcElement,
-  //         text = target.textContent || text.innerText;   
-  // }, false);
-
-  }
+  
 
 
 }

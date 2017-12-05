@@ -1,6 +1,3 @@
-<p>
-  deal-creation works!
-</p>
 
 
 <div id="postReq">
@@ -8,8 +5,10 @@
       <p>Offer:  <input id = "offer" type = "text"> </p>
 
 
+      <div id = "dropdownAndTags">
+
       <div class="dropdown">
-          <button (click)="myFunction()" class="dropbtn">Dropdown</button>
+          <button (click)="myFunction()" class="dropbtn">Deal Tags</button>
             <div id="myDropdown" class="dropdown-content">
               <input type="text" placeholder="Search.." id="myInput" (keyup)="filterFunction()">
               <p id="a1" (click)="onEvent($event)">Alcohol</p>
@@ -33,6 +32,12 @@
 
             </div>
           </div>
+
+        <div id ="tagContainer">
+
+        </div>
+
+      </div>
 
 
       <p>Name:   <input id = "name" type = "text" > </p>
