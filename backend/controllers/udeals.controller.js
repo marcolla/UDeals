@@ -16,7 +16,8 @@ exports.createUDeal=function(req,res,next){
             description: req.body.details.description,
             deliver: req.body.details.deliver,
             link: req.body.details.link,
-            recurring: req.body.details.recurring}});
+            recurring: req.body.details.recurring,
+            tags: req.body.details.tags}});
     // var u=new UDeal({ offer: '3 dolla ice cream', details: {name:'qdoba', addresss: 'main street',
     // day: 'Sunday',
     // time: '1pm - 3am',
@@ -45,7 +46,8 @@ exports.createUDeal=function(req,res,next){
             description: req.body.details.description,
             deliver: req.body.details.deliver,
             link: req.body.details.link,
-            recurring: req.body.details.recurring} } },
+            recurring: req.body.details.recurring,
+            types: req.body.details.types} } },
             function(err, udeal) {
                 res.status(201).json(udeal)
             })
