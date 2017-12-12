@@ -4,6 +4,7 @@
     left: 0;
     right: 0;
     background-image: url("http://media1.giphy.com/media/2LqQkIPKNevkc/giphy.gif"); 
+    
     background-repeat:repeat-x;
     text-align: center;
     vertical-align: middle;
@@ -12,9 +13,28 @@
     color: white;
     font-size: 120px;
     -webkit-text-stroke: 3px black;
-    -webkit-transition: width 2s, height 4s; /* Safari */
-    transition: width 2s, height 4s;
+    
+    overflow-x: hidden;
+    
+
 
     
 
+}
+
+.bgborder{
+     
+    overflow-x: hidden;
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+    position:relative;
+    top: 269px;
+    right: 0;
+
+    height:0px;
+    width:1337px;
+    margin: 0;
+
+    border:2px solid #021a40;
 }
