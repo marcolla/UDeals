@@ -32,7 +32,15 @@ exports.createUDeal=function(req,res,next){
 }
 
     exports.findUDeal=function(req,res,next){
-        var deal = UDeal.findOne({ offer: req.body.offer}, function(err,udeal){
+        console.log(req.params);
+        var deal = UDeal.findOne(req.params, function(err,udeal){
+            res.status(201).json(udeal)
+        });
+    }
+
+
+    exports.findUDealTest=function(req,res,next){
+        var deal = UDeal.find({ recurring: req.body.details.recurring}, function(err,udeal){
             res.status(201).json(udeal)
         });
     }
@@ -58,4 +66,16 @@ exports.createUDeal=function(req,res,next){
             function(err, udeal) {
                 res.status(201).json(udeal)
             })
+    }
+
+    exports.findByTag = function(req,res,next) {
+            console.log("FUCK!#######################################################");
+            console.log(req.params);
+            console.log("THIS!#########################################");
+            //console.log(req.body.details);
+            console.log("SHIT!##############################################################");
+            UDeal.find({"details.tags": req.params.tags},
+                    function(err, udeal) {
+                        res.status(201).json(udeal)
+                    })
     }

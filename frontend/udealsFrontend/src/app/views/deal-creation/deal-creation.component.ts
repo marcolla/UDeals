@@ -31,8 +31,14 @@ export class DealCreationComponent implements OnInit {
     '", "deliver": "' + (<HTMLInputElement>document.getElementById("deliver")).value +
     '", "link": "' + (<HTMLInputElement>document.getElementById("link")).value +
     '", "recurring": "' + (<HTMLInputElement>document.getElementById("recurring")).value +
-    '", "tags": "' + this.tagsArray +
-    '"}}';
+    '", "tags": [';
+    for (var i = 0; i < this.tagsArray.length; i++) {
+      dealJSON += '"' + this.tagsArray[i] + '"';
+      if (i < this.tagsArray.length - 1) {
+        dealJSON += ', ';
+      }
+    }
+    dealJSON += ']}}';
 
     console.log(dealJSON);
 
@@ -82,7 +88,7 @@ export class DealCreationComponent implements OnInit {
     var tag = document.getElementById(tagID.nodeValue).textContent;
     
     this.tagsArray.push(tag);
-    //console.log(this.tagsArray);
+    console.log(this.tagsArray);
 
     var tagBtn = document.createElement("BUTTON");
     var tagText = document.createTextNode(tag);
@@ -99,6 +105,7 @@ export class DealCreationComponent implements OnInit {
 
 
     var currentTagsArray = this.tagsArray;
+    console.log(currentTagsArray);
 
 
     
@@ -123,6 +130,7 @@ export class DealCreationComponent implements OnInit {
       });
 
     this.tagsArray = currentTagsArray;
+    console.log(this.tagsArray);
   }
 
   
