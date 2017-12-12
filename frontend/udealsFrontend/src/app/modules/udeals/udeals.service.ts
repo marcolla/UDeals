@@ -35,6 +35,13 @@ export class UdealsService {
       body: input
     }))
 
+    findByTag = (input) => this.http.get(
+      this.baseUri + "/" + input,
+      { headers: this.headers }).map(x => {
+        console.log(x.json);
+        return x.json();
+      })
+
 
 
   }
