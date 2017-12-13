@@ -21,9 +21,8 @@
     
 
 }
-
 #background{
-    background-image: url("background.jpg") ;
+    background-image: url("../background.jpg") ;
 /*height :1650px;
 width:1340px;
 overflow-x: hidden;
@@ -119,6 +118,10 @@ z-index: -5;
     border-radius: 5px;
 }
 
+.redirectbutton{
+    border-radius: 5px;
+}
+
 #dropdownAndTags{
     position: relative;
     
@@ -126,5 +129,6 @@ z-index: -5;
     left: 16.5%; */
 
 }
+
 
          

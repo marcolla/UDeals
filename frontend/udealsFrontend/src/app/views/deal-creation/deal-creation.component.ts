@@ -21,6 +21,7 @@ export class DealCreationComponent implements OnInit {
   }
 
   postDeal() {
+    
     var dealJSON = 
     '{ "offer" : "' + (<HTMLInputElement>document.getElementById("offer")).value + 
     '", "details" : { "name": "' + (<HTMLInputElement>document.getElementById("name")).value + 
@@ -44,10 +45,20 @@ export class DealCreationComponent implements OnInit {
 
     this._apiSVC.postDeals(dealJSON).subscribe(y => {
     });
+
+    
   }
 
   myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  redirect()
+  {
+  
+
+  var url = "http://localhost:4200/deals";
+location.href = url;
   }
   
   filterFunction() {

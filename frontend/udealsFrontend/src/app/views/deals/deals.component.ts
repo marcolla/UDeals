@@ -20,7 +20,7 @@ export class DealsComponent implements OnInit {
   ngOnInit() {
   }
 
-
+  
   postDeal() {
     var dealJSON = 
     '{ "offer" : "' + (<HTMLInputElement>document.getElementById("offer")).value + 

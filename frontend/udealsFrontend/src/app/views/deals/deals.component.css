@@ -6,11 +6,33 @@
     overflow: visible;
 
 }
+
+
+#background{
+    background-image: url("../background.jpg") ;
+/*height :1650px;
+width:1340px;
+overflow-x: hidden;
+
+*/
+position: absolute;
+top:0;
+right:0;
+left: 0;
+bottom: 0;
+z-index: -5;
+  
+
+     
+    
+    
+}
 .deals_table{
     position: absolute;
     top: 30%;
     border: solid;
     border-color: black;
+    z-index: 1;
 }
 
 #dropdownAndTags{

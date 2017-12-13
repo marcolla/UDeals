@@ -4,7 +4,7 @@
     left: 0;
     right: 0;
     background-image: url("http://media1.giphy.com/media/2LqQkIPKNevkc/giphy.gif"); 
-    
+    z-index: -3;
     background-repeat:repeat-x;
     text-align: center;
     vertical-align: middle;
