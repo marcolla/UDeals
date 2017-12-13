@@ -69,13 +69,62 @@ exports.createUDeal=function(req,res,next){
     }
 
     exports.findByTag = function(req,res,next) {
-            console.log("FUCK!#######################################################");
-            console.log(req.params);
-            console.log("THIS!#########################################");
-            //console.log(req.body.details);
-            console.log("SHIT!##############################################################");
-            UDeal.find({"details.tags": req.params.tags},
+        if (req.params.tags == "any") {
+            if (req.params.day == "any") {
+                if (req.params.deliver == "any") {
+                    UDeal.find({},function(err,udeal){
+                        res.status(201).json(udeal)
+                    });
+                }
+                else {
+                    UDeal.find({"details.deliver": req.params.deliver},
                     function(err, udeal) {
                         res.status(201).json(udeal)
-                    })
+                    });
+                }
+            }
+            else {
+                if (req.params.deliver == "any") {
+                    UDeal.find({"details.day": req.params.day},
+                    function(err, udeal) {
+                        res.status(201).json(udeal)
+                    });
+                }
+                else {
+                    UDeal.find({"details.day": req.params.day, "details.deliver": req.params.deliver},
+                    function(err, udeal) {
+                        res.status(201).json(udeal)
+                    });
+                }
+            }  
+        }
+        else {
+            if (req.params.day == "any") {
+                if (req.params.deliver == "any") {
+                    UDeal.find({"details.tags": req.params.tags},function(err,udeal){
+                        res.status(201).json(udeal)
+                    });
+                }
+                else {
+                    UDeal.find({"details.deliver": req.params.deliver,"details.tags": req.params.tags},
+                    function(err, udeal) {
+                        res.status(201).json(udeal)
+                    });
+                }
+            }
+            else {
+                if (req.params.deliver == "any") {
+                    UDeal.find({"details.day": req.params.day,"details.tags": req.params.tags},
+                    function(err, udeal) {
+                        res.status(201).json(udeal)
+                    });
+                }
+                else {
+                    UDeal.find({"details.day": req.params.day, "details.deliver": req.params.deliver,"details.tags": req.params.tags},
+                    function(err, udeal) {
+                        res.status(201).json(udeal)
+                    });
+                }
+            }
+        }
     }

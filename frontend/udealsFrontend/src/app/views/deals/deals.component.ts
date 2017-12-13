@@ -9,12 +9,21 @@ import { UdealsService } from '../../modules/udeals/udeals.service';
 export class DealsComponent implements OnInit {
   deals: any[] = [ ];
   _apiSVC: UdealsService;
+  tag: String; 
+  day: any;
+  deliver: any;
+  options: String[] = ["Burgers", "Pizza"];
 
   constructor(private _apiSvc: UdealsService) {
+    this.tag = "any";
+    this.day = "any"
+    this.deliver = "any";
     this._apiSVC = _apiSvc;
     _apiSvc.getDeals().subscribe(x => {
       this.deals = x;
     });
+
+
 
   }
   ngOnInit() {
@@ -98,17 +107,28 @@ filterFunction() {
 }  
 
 
+filterTag() {
+  console.log(this.tag);
+  this._apiSVC.findByTag(this.tag).subscribe(x => {this.deals = x});
+}
 
+setTag(input) {
+  this.tag = input;
+  console.log(this.tag);
+}
 
 onEvent(event){
   var target = event.target || event.srcElement || event.currentTarget;
   var tagID = target.attributes.id; 
-  var tag = document.getElementById(tagID.nodeValue).textContent;
+  var tagg = document.getElementById(tagID.nodeValue).textContent;
   
-  this._apiSVC.findByTag(tag).subscribe(x => {this.deals = x});
+
+  this._apiSVC.findByTag(tagg).subscribe(x => {this.deals = x});
 
   // var dealListing = document.getElementById("dealListing");
   // dealListing.
 }
+
+
 
 }

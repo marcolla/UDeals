@@ -9,7 +9,7 @@ module.exports = function(app) {
     const udealRoutes = express.Router();
     udealRoutes.get('/',udealsController.getUDeals);
     udealRoutes.get('/:_id',udealsController.findUDeal);
-    udealRoutes.get('/tags/:tags',udealsController.findByTag);
+    udealRoutes.get('/tag/:tags/day/:day/deliver/:deliver',udealsController.findByTag);
     udealRoutes.get("/:recurring", udealsController.findUDealTest);
     //udealRoutes.get('/:id',udealController.getUser);
     udealRoutes.post('/',udealsController.createUDeal);
