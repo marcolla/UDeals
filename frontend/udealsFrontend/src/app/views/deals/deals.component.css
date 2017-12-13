@@ -9,6 +9,8 @@
 .deals_table{
     position: absolute;
     top: 30%;
+    border: solid;
+    border-color: black;
 }
 
 #dropdownAndTags{
@@ -61,4 +63,39 @@
 
 .dropdown p:hover {background-color: #ddd}
 
+#resetButton {
+    position: absolute;
+    top : 50%;
+    left: 50%;
+}
+
+.resetB {
+    position: absolute;
+}
+
 .show {display:block;}
+
+.dealNo{
+    border: solid;
+    border-color: black;
+}
+
+.dealOffer{
+    border: solid;
+    border-color: black;
+}
+
+.dealDay{
+    border: solid;
+    border-color: black;
+}
+
+.dealRest{
+    border: solid;
+    border-color: black;
+}
+
+.dealDeli{
+    border: solid;
+    border-color: black;
+}

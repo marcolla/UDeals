@@ -76,6 +76,12 @@ myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
+filterReset() {
+  this._apiSvc.getDeals().subscribe(x => {
+    this.deals = x;
+  });
+}
+
 filterFunction() {
   var input, filter, ul, li, a, i, div;
   input = document.getElementById("myInput");

@@ -5,7 +5,9 @@
 
   <tr id="dealListing" *ngFor="let deal of deals; let i=index" >
 
-    <td>{{i+1}}</td>  <td>{{deal.offer}}</td>
+    <script> var temp = deal.details.deliver; console.log(temp);</script>
+
+    <td class="dealNo" >{{i+1}}</td>  <td class="dealOffer">{{deal.offer}}</td> <td class="dealDay">{{deal.details.day}}</td> <td class = "dealRest"> {{deal.details.name}}</td> <td class="dealDeli"> {{deal.details.deliver}} </td>
   </tr>
 
 
@@ -13,32 +15,35 @@
 
 
 <div id = "dropdownAndTags">
-  
-        <div class="dropdown">
-            <button (click)="myFunction()" class="dropbtn">Categories</button>
-              <div id="myDropdown" class="dropdown-content">
-                <input type="text" placeholder="Search.." id="myInput" (keyup)="filterFunction()">
-                <p id="a1" (click)="onEvent($event)">Alcohol</p>
-                <p id="a2" (click)="onEvent($event)">Burgers</p>
-                <p id="a3" (click)="onEvent($event)">Pizza</p>
-                <p id="a4" (click)="onEvent($event)">Sushi</p>
-                <p id="a5" (click)="onEvent($event)">Mexican</p>
-                <p id="a6" (click)="onEvent($event)">Chinese</p>
-                <p id="a7" (click)="onEvent($event)">Indian</p>
-                <p id="a8" (click)="onEvent($event)">Japanese</p>
-                <p id="a9" (click)="onEvent($event)">Wings</p>
-                <p id="a10" (click)="onEvent($event)">Shakes</p>
-                <p id="a11" (click)="onEvent($event)">Sandwiches</p>
-                <p id="a12" (click)="onEvent($event)">American</p>
-                <p id="a13" (click)="onEvent($event)">Salad</p>
-                <p id="a14" (click)="onEvent($event)">Italian</p>
-                <p id="a15" (click)="onEvent($event)">Calzones</p>
-                <p id="a16" (click)="onEvent($event)">Dessert</p>
-                <p id="a17" (click)="onEvent($event)">Pasta</p>
-                <p id="a18" (click)="onEvent($event)">Other</p>
-                </div>
-                </div>
-                </div>
+  <div class="dropdown">
+    <button (click)="myFunction()" class="dropbtn">Categories</button>
+      <div id="myDropdown" class="dropdown-content">
+        <input type="text" placeholder="Search.." id="myInput" (keyup)="filterFunction()">
+        <p id="a1" (click)="onEvent($event)">Alcohol</p>
+        <p id="a2" (click)="onEvent($event)">Burgers</p>
+        <p id="a3" (click)="onEvent($event)">Pizza</p>
+        <p id="a4" (click)="onEvent($event)">Sushi</p>
+        <p id="a5" (click)="onEvent($event)">Mexican</p>
+        <p id="a6" (click)="onEvent($event)">Chinese</p>
+        <p id="a7" (click)="onEvent($event)">Indian</p>
+        <p id="a8" (click)="onEvent($event)">Japanese</p>
+        <p id="a9" (click)="onEvent($event)">Wings</p>
+        <p id="a10" (click)="onEvent($event)">Shakes</p>
+        <p id="a11" (click)="onEvent($event)">Sandwiches</p>
+        <p id="a12" (click)="onEvent($event)">American</p>
+        <p id="a13" (click)="onEvent($event)">Salad</p>
+        <p id="a14" (click)="onEvent($event)">Italian</p>
+        <p id="a15" (click)="onEvent($event)">Calzones</p>
+        <p id="a16" (click)="onEvent($event)">Dessert</p>
+        <p id="a17" (click)="onEvent($event)">Pasta</p>
+        <p id="a18" (click)="onEvent($event)">Other</p>
+       </div>
+  </div>
+</div>
+
+<div id = "resetButton">
+  <button (click)="filterReset()" class="resetB">Reset Filter</button>
+</div>
 
 
 
