@@ -17,7 +17,6 @@
     overflow-x: hidden;
     
 
-
     
 
 }
@@ -31,10 +30,11 @@
     position:relative;
     top: 269px;
     right: 0;
+    left: 0;
 
     height:0px;
     width:1337px;
     margin: 0;
 
-    border:2px solid #021a40;
+    border:2px solid #000000;
 }

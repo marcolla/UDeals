@@ -69,4 +69,40 @@ export class DealsComponent implements OnInit {
     });
   }
 
+
+
+
+myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+filterFunction() {
+  var input, filter, ul, li, a, i, div;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+      if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+          a[i].style.display = "";
+      } else {
+          a[i].style.display = "none";
+      }
+  }
+}  
+
+
+
+
+onEvent(event){
+  var target = event.target || event.srcElement || event.currentTarget;
+  var tagID = target.attributes.id; 
+  var tag = document.getElementById(tagID.nodeValue).textContent;
+  
+  this._apiSVC.findByTag(tag).subscribe(x => {this.deals = x});
+
+  // var dealListing = document.getElementById("dealListing");
+  // dealListing.
+}
+
 }
