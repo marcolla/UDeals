@@ -1,58 +1,91 @@
-
 <div id = "background">
-<div id="postReq">
-
-
-    
-      <p>Offer:  <input id = "offer" type = "text"> </p>
-      <br>
-
-
+  <div id="postReq">
+  
+  
       
-
-
-      <p>Name:   <input id = "name" type = "text" > </p>
-      <p>Address: <input id = "address" type = "text"> </p>
-      <p>Day:  <input id = "day" type = "text"> </p>
-      <p>Time:  <input id = "time" type = "text"> </p>
-      <p>Description:  <input id = "description" type = "text"> </p>
-      <p>Deliver:   <input id = "deliver" type = "text"> </p>
-      <p>Link:  <input id = "link" type = "text"> </p>
-      <p>Recurring:  <input id = "recurring" type = "text"> </p>
-
+        <p>Offer:  <input id = "offer" type = "text"> </p>                    
+  
+        <p>Category: 
+  
+  
+            <select id="myDropdown" class="dropdown-content" ng-change="onEvent($event)" multiple>
+                <!-- <input type="text" placeholder="Search.." id="myInput" (keyup)="filterFunction()"> -->
+                <option id="a1" (click)="onEvent($event)">Alcohol</option>
+                <option id="a2" (click)="onEvent($event)">Burgers</option>
+                <option id="a3" (click)="onEvent($event)">Pizza</option>
+                <option id="a4" (click)="onEvent($event)">Sushi</option>
+                <option id="a5" (click)="onEvent($event)">Mexican</option>
+                <option id="a6" (click)="onEvent($event)">Chinese</option>
+                <option id="a7" (click)="onEvent($event)">Indian</option>
+                <option id="a8" (click)="onEvent($event)">Japanese</option>
+                <option id="a9" (click)="onEvent($event)">Wings</option>
+                <option id="a10" (click)="onEvent($event)">Shakes</option>
+                <option id="a11" (click)="onEvent($event)">Sandwiches</option>
+                <option id="a12" (click)="onEvent($event)">American</option>
+                <option id="a13" (click)="onEvent($event)">Salad</option>
+                <option id="a14" (click)="onEvent($event)">Italian</option>
+                <option id="a15" (click)="onEvent($event)">Calzones</option>
+                <option id="a16" (click)="onEvent($event)">Dessert</option>
+                <option id="a17" (click)="onEvent($event)">Pasta</option>
+                <option id="a18" (click)="onEvent($event)">Other</option>
+            </select>
+  
+        </p>
+  
+        <!-- <div id = "dropdownAndTags">
+            
+                   <div class="dropdown"> 
+                     <button (click)="myFunction()" class="dropbtn">Categories</button> 
+                       
+                          </div>
+              
+                          <select id="was myDropdown" class="dropdown-content">
+                              <input type="text" placeholder="Search.." id="myInput" (keyup)="filterFunction()">
+                              <option id="a1" (click)="onEvent($event)">Alcohol</option>
+                              <option id="a2" (click)="onEvent($event)">Burgers</option>
+                              <option id="a3" (click)="onEvent($event)">Pizza</option>
+                              <option id="a4" (click)="onEvent($event)">Sushi</option>
+                              <option id="a5" (click)="onEvent($event)">Mexican</option>
+                              <option id="a6" (click)="onEvent($event)">Chinese</option>
+                              <option id="a7" (click)="onEvent($event)">Indian</option>
+                              <option id="a8" (click)="onEvent($event)">Japanese</option>
+                              <option id="a9" (click)="onEvent($event)">Wings</option>
+                              <option id="a10" (click)="onEvent($event)">Shakes</option>
+                              <option id="a11" (click)="onEvent($event)">Sandwiches</option>
+                              <option id="a12" (click)="onEvent($event)">American</option>
+                              <option id="a13" (click)="onEvent($event)">Salad</option>
+                              <option id="a14" (click)="onEvent($event)">Italian</option>
+                              <option id="a15" (click)="onEvent($event)">Calzones</option>
+                              <option id="a16" (click)="onEvent($event)">Dessert</option>
+                              <option id="a17" (click)="onEvent($event)">Pasta</option>
+                              <option id="a18" (click)="onEvent($event)">Other</option>
+                          </select>
+                            </div> -->
+  
+        <p>Name:   <input id = "name" type = "text" > </p>
+        <p>Address: <input id = "address" type = "text"> </p>
+        <p>Day:  <input id = "day" type = "text"> </p>
+        
+        <p>Time:  <input id = "time" type = "text"> </p>
+     
+        <p>Description:  <input id = "description" type = "text"> </p>
+        <p>Deliver:   <input id = "deliver" type = "text"> </p>
+        <p>Link:  <input id = "link" type = "text"> </p>
+        <p>Recurring:  <input id = "recurring" type = "text"> </p>    
+  
+        
+  
       
-
-    
-      <button (click)='postDeal()' class="postbtn"> POST </button>
-    
-    </div>
-
-
-    <div id = "dropdownAndTags">
+        <button (click)='postDeal()' class="postbtn"> POST </button>
       
-            <div class="dropdown">
-                <button (click)="myFunction()" class="dropbtn">Categories</button>
-                  <div id="myDropdown" class="dropdown-content">
-                    <input type="text" placeholder="Search.." id="myInput" (keyup)="filterFunction()">
-                    <p id="a1" (click)="onEvent($event)">Alcohol</p>
-                    <p id="a2" (click)="onEvent($event)">Burgers</p>
-                    <p id="a3" (click)="onEvent($event)">Pizza</p>
-                    <p id="a4" (click)="onEvent($event)">Sushi</p>
-                    <p id="a5" (click)="onEvent($event)">Mexican</p>
-                    <p id="a6" (click)="onEvent($event)">Chinese</p>
-                    <p id="a7" (click)="onEvent($event)">Indian</p>
-                    <p id="a8" (click)="onEvent($event)">Japanese</p>
-                    <p id="a9" (click)="onEvent($event)">Wings</p>
-                    <p id="a10" (click)="onEvent($event)">Shakes</p>
-                    <p id="a11" (click)="onEvent($event)">Sandwiches</p>
-                    <p id="a12" (click)="onEvent($event)">American</p>
-                    <p id="a13" (click)="onEvent($event)">Salad</p>
-                    <p id="a14" (click)="onEvent($event)">Italian</p>
-                    <p id="a15" (click)="onEvent($event)">Calzones</p>
-                    <p id="a16" (click)="onEvent($event)">Dessert</p>
-                    <p id="a17" (click)="onEvent($event)">Pasta</p>
-                    <p id="a18" (click)="onEvent($event)">Other</p>
-                    </div>
-                    </div>
-                    </div>
-    </div>
+     
+        
+  
+  
+  
+                      </div>
+  
+      </div>
+  
+  
+  
