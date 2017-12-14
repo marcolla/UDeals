@@ -129,6 +129,14 @@ onEvent(event){
   // dealListing.
 }
 
+moveToDetails(event, id){
+  // var target = event.target || event.srcElement || event.currentTarget;
+  // var ID = target.attributes.id; 
+  // console.log(target);
+  // var dealID = document.getElementById(ID.nodeValue).textContent;
+  
+  window.location.href += "/" + id;
 
+}
 
 }

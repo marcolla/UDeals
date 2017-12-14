@@ -5,9 +5,8 @@
 
   <tr id="dealListing" *ngFor="let deal of deals; let i=index" >
 
-    <script> var temp = deal.details.deliver; console.log(temp);</script>
 
-    <td class="dealNo" >{{i+1}}</td>  <td class="dealOffer">{{deal.offer}}</td> <td class="dealDay">{{deal.details.day}}</td> <td class = "dealRest"> {{deal.details.name}}</td> <td class="dealDeli"> {{deal.details.deliver}} </td>
+    <div class = "dealRow" (click)="moveToDetails($event, deal._id)"><td class="dealNo" >{{i+1}}</td>  <td class="dealOffer">{{deal.offer}}</td> <td class="dealDay">{{deal.details.day}}</td> <td class = "dealRest"> {{deal.details.name}}</td> <td class="dealDeli"> {{deal.details.deliver}} </td> </div>
   </tr>
 
 
@@ -48,7 +47,7 @@
 
 
 
-                <button (click)="filterTag()" class="button">stuff</button>
+  <button (click)="filterTag()" class="button">stuff</button>
 
 
 <!--

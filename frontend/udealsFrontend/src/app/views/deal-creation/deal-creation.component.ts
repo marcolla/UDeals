@@ -98,21 +98,31 @@ location.href = url;
     var tagID = target.attributes.id; 
     var tag = document.getElementById(tagID.nodeValue).textContent;
     
+    for(var i = 0; i < this.tagsArray.length; i++){
+      if(tag == this.tagsArray[i]){
+        return 0;
+      }
+    }
+    
     this.tagsArray.push(tag);
     console.log(this.tagsArray);
 
     var tagBtn = document.createElement("BUTTON");
     var tagText = document.createTextNode(tag);
     tagBtn.appendChild(tagText);
+    document.getElementById("cat").appendChild(tagBtn);
     tagBtn.className = "tagButton";
     tagBtn.id = `b${this.tagCount}`;
     this.tagCount++;
+    
     
     //tagBtn.attributes.onclick = this.deleteTag(event);
     // tagBtn.style.position = "relative";
     // tagBtn.style.top = "500px";
     // console.log(tagBtn.className);
-    document.getElementById("tagContainer").appendChild(tagBtn);
+
+
+    //document.getElementById("tagContainer").appendChild(tagBtn);
 
 
     var currentTagsArray = this.tagsArray;
@@ -122,6 +132,8 @@ location.href = url;
     
 
     //console.log(document.getElementsByClassName("tagButton"));
+
+
     var numButtons = document.getElementsByClassName("tagButton").length;
 
     document.getElementsByClassName("tagButton")[numButtons - 1].addEventListener(

@@ -64,9 +64,18 @@ z-index: -5;
 }
 
 #myDropdown{
-    /* position: absolute; */
-    /* top: 70%; bottom: -450%; right:0; left: 20%; */
-    /* overflow-x: hidden; */
+    position: relative;
+    height: 60px;
+}
+
+#cat{
+    position:relative;
+    text-align:center;
+}
+#dropdownDiv{
+    position:relative;
+    text-align:right;
+    bottom:22px;
 }
 
 .dropdown-content {

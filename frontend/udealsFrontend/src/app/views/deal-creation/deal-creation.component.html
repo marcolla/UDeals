@@ -16,9 +16,8 @@
       
         <p>Offer:  <input id = "offer" type = "text"> </p>                    
   
-        <p>Category: 
-  
-  
+        <div id="cat">Category: <!--<div id="dropdownDiv">test</div> -->
+
             <select id="myDropdown" class="dropdown-content" ng-change="onEvent($event)" multiple>
                 <!-- <input type="text" placeholder="Search.." id="myInput" (keyup)="filterFunction()"> -->
                 <option id="a1" (click)="onEvent($event)">Alcohol</option>
@@ -40,8 +39,9 @@
                 <option id="a17" (click)="onEvent($event)">Pasta</option>
                 <option id="a18" (click)="onEvent($event)">Other</option>
             </select>
-  
-        </p>
+            
+        </div>
+        
   
         <!-- <div id = "dropdownAndTags">
             
