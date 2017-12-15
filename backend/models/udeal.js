@@ -11,7 +11,7 @@ var dealSchema = mongoose.Schema({
     details: {
         name: {type: String},
         addresss: {type: String},
-        day: {type: String},
+        day: {type: [String]},
         time: {type: String},
         description: {type: String},
         deliver: {type: Boolean},

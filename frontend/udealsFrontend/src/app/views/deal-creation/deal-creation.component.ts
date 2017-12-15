@@ -12,6 +12,8 @@ export class DealCreationComponent implements OnInit {
   tagsArray: string[] = [];
   event: MouseEvent;
   tagCount: number = 0;
+  daysArray: string[] = [];
+  dayCount: number = 0;
 
   constructor(private _apiSvc: UdealsService) {
     this._apiSVC = _apiSvc;
@@ -157,7 +159,61 @@ export class DealCreationComponent implements OnInit {
     var popup = document.getElementById("postPopup");
     popup.classList.toggle("show");
   }
+  
+  pickDays(event){
+    var target = event.target || event.srcElement || event.currentTarget;
+    var dayID = target.attributes.id; 
+    var day = document.getElementById(dayID.nodeValue).textContent;
+    
+    for(var i = 0; i < this.daysArray.length; i++){
+      if(day == this.daysArray[i]){
+        return 0;
+      }
+    }
+    
+    this.daysArray.push(day);
+    console.log(this.daysArray);
 
+    var dayBtn = document.createElement("BUTTON");
+    var dayText = document.createTextNode(day);
+    dayBtn.appendChild(dayText);
+    document.getElementById("day").appendChild(dayBtn);
+    dayBtn.className = "dayButton";
+    dayBtn.id = `b${this.dayCount}`;
+    this.dayCount++;
+    
+
+
+    var currentDaysArray = this.daysArray;
+    console.log(currentDaysArray);
+
+
+    
+
+    //console.log(document.getElementsByClassName("tagButton"));
+
+
+    var numDayButtons = document.getElementsByClassName("dayButton").length;
+
+    document.getElementsByClassName("dayButton")[numDayButtons - 1].addEventListener(
+      'click', 
+      function(){ 
+        console.log(this);
+        var bTag = this.textContent;
+        //Remove tag from array
+        for(var i = 0; i < currentDaysArray.length; i++){
+          if(currentDaysArray[i] == bTag){
+            currentDaysArray.splice(i,1);
+            console.log(currentDaysArray);
+          }
+        }
+        //Remove tag button
+        this.remove(); 
+      });
+
+    this.daysArray = currentDaysArray;
+    console.log(this.daysArray);
+  }
 
 }
 

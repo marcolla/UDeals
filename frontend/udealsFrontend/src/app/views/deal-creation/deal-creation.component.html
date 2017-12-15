@@ -66,7 +66,22 @@
   
         <p>Name:   <input id = "name" type = "text" > </p>
         <p>Address: <input id = "address" type = "text"> </p>
-        <p>Day:  <input id = "day" type = "text"> </p>
+        <div id="day">Day: <!--<div id="dropdownDiv">test</div> -->
+        
+                    <select id="myDropdownD" class="dropdown-content" ng-change="pickDays($event)" multiple>
+                        <!-- <input type="text" placeholder="Search.." id="myInput" (keyup)="filterFunction()"> -->
+                        <option id="d1" (click)="pickDays($event)">Monday</option>
+                        <option id="d2" (click)="pickDays($event)">Tuesday</option>
+                        <option id="d3" (click)="pickDays($event)">Wednesday</option>
+                        <option id="d4" (click)="pickDays($event)">Thursday</option>
+                        <option id="d5" (click)="pickDays($event)">Friday</option>
+                        <option id="d6" (click)="pickDays($event)">Saturday</option>
+                        <option id="d7" (click)="pickDays($event)">Sunday</option>
+                        <option id="d8" (click)="pickDays($event)">Everyday</option>
+
+                    </select>
+                    
+                </div>
         
         <p>Time:  <input id = "time" type = "text"> </p>
      
