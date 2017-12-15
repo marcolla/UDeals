@@ -15,28 +15,59 @@
 
 <div id = "dropdownAndTags">
   <div class="dropdown">
-    <button (click)="myFunction()" class="dropbtn">Categories</button>
+    <button (click)="myFunction()" id="dropbtn">Categories</button>
       <div id="myDropdown" class="dropdown-content">
         <input type="text" placeholder="Search.." id="myInput" (keyup)="filterFunction()">
-        <p id="a1" (click)="onEvent($event)">Alcohol</p>
-        <p id="a2" (click)="onEvent($event)">Burgers</p>
-        <p id="a3" (click)="onEvent($event)">Pizza</p>
-        <p id="a4" (click)="onEvent($event)">Sushi</p>
-        <p id="a5" (click)="onEvent($event)">Mexican</p>
-        <p id="a6" (click)="onEvent($event)">Chinese</p>
-        <p id="a7" (click)="onEvent($event)">Indian</p>
-        <p id="a8" (click)="onEvent($event)">Japanese</p>
-        <p id="a9" (click)="onEvent($event)">Wings</p>
-        <p id="a10" (click)="onEvent($event)">Shakes</p>
-        <p id="a11" (click)="onEvent($event)">Sandwiches</p>
-        <p id="a12" (click)="onEvent($event)">American</p>
-        <p id="a13" (click)="onEvent($event)">Salad</p>
-        <p id="a14" (click)="onEvent($event)">Italian</p>
-        <p id="a15" (click)="onEvent($event)">Calzones</p>
-        <p id="a16" (click)="onEvent($event)">Dessert</p>
-        <p id="a17" (click)="onEvent($event)">Pasta</p>
-        <p id="a18" (click)="onEvent($event)">Other</p>
+        <p id="a0" (click)="setTag('any')">Clear</p>
+        <p id="a1" (click)="setTag('Alcohol')">Alcohol</p>
+        <p id="a2" (click)="setTag('Burgers')">Burgers</p>
+        <p id="a3" (click)="setTag('Pizza')">Pizza</p>
+        <p id="a4" (click)="setTag('Sushi')">Sushi</p>
+        <p id="a5" (click)="setTag('Mexican')">Mexican</p>
+        <p id="a6" (click)="setTag('Chinese')">Chinese</p>
+        <p id="a7" (click)="setTag('Indian')">Indian</p>
+        <p id="a8" (click)="setTag('Japanese')">Japanese</p>
+        <p id="a9" (click)="setTag('Wings')">Wings</p>
+        <p id="a10" (click)="setTag('Shakes')">Shakes</p>
+        <p id="a11" (click)="setTag('Sandwiches')">Sandwiches</p>
+        <p id="a12" (click)="setTag('American')">American</p>
+        <p id="a13" (click)="setTag('Salad')">Salad</p>
+        <p id="a14" (click)="setTag('Italian')">Italian</p>
+        <p id="a15" (click)="setTag('Calzones')">Calzones</p>
+        <p id="a16" (click)="setTag('Dessert')">Dessert</p>
+        <p id="a17" (click)="setTag('Pasta')">Pasta</p>
+        <p id="a18" (click)="setTag('Other')">Other</p>
        </div>
+  </div>
+</div>
+
+<div id = "dropdayContainer">
+  <div class="dropdayClass">
+    <button (click)="myFunction2()" id="dropdayButton">Day</button>
+      <div id="dropday" class="dropday-content">
+        <input type="text" placeholder="Search.." id="dayInput" (keyup)="filterFunction()">
+        <p id="b0" (click)="setDay('any')">Clear</p>
+        <p id="b1" (click)="setDay('monday')">Monday</p>
+        <p id="b2" (click)="setDay('tuesday')">Tuesday</p>
+        <p id="b3" (click)="setDay('wednesday')">Wednesday</p>
+        <p id="b4" (click)="setDay('thursday')">Thursday</p>
+        <p id="b5" (click)="setDay('friday')">Friday</p>
+        <p id="b6" (click)="setDay('saturday')">Saturday</p>
+        <p id="b7" (click)="setDay('sunday')">Sunday</p>
+        <p id="b8" (click)="setDay('everyday')">Everyday</p>
+      </div>
+  </div>
+</div>
+
+<div id = "dropDeliverContainer">
+  <div class="dropDeliverClass">
+    <button (click)="myFunction3()" id="dropDeliverButton">Deliver?</button>
+      <div id="dropDeliver" class="dropDeliver-content">
+        <input type="text" placeholder="Search.." id="deliverInput" (keyup)="filterFunction()">
+        <p id="c0" (click)="setDeliver('any')">Clear</p>
+        <p id="c1" (click)="setDeliver('true')">Yes</p>
+        <p id="c2" (click)="setDeliver('false')">No</p>
+      </div>
   </div>
 </div>
 

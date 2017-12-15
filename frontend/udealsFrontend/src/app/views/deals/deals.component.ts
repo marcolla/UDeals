@@ -85,6 +85,14 @@ myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
+myFunction2() {
+  document.getElementById("dropday").classList.toggle("show");
+}
+
+myFunction3() {
+  document.getElementById("dropDeliver").classList.toggle("show");
+}
+
 filterReset() {
   this._apiSvc.getDeals().subscribe(x => {
     this.deals = x;
@@ -108,13 +116,34 @@ filterFunction() {
 
 
 filterTag() {
+  var input = [this.tag, this.day, this.deliver];
   console.log(this.tag);
-  this._apiSVC.findByTag(this.tag).subscribe(x => {this.deals = x});
+  this._apiSVC.findByTag(input).subscribe(x => {this.deals = x});
 }
 
 setTag(input) {
   this.tag = input;
+  document.getElementById("myDropdown").classList.toggle("show");
   console.log(this.tag);
+  document.getElementById("dropbtn").textContent = input;
+}
+
+setDay(input) {
+  this.day = input;
+  document.getElementById("dropday").classList.toggle("show");
+  console.log(this.tag);
+  document.getElementById("dropdayButton").textContent = input;
+}
+
+setDeliver(input) {
+  this.deliver = input;
+  document.getElementById("dropDeliver").classList.toggle("show");
+  console.log(this.tag);
+  if(input == "true") {
+    document.getElementById("dropDeliverButton").textContent = "Yes";
+  } else if (input == "false") {
+    document.getElementById("dropDeliverButton").textContent = "No";
+  }
 }
 
 onEvent(event){

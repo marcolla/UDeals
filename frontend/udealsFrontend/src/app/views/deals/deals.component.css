@@ -6,9 +6,27 @@
     overflow: visible;
 
 }
+#background{
+        background-image: url("../background.jpg") ;
+    /*height :1650px;
+    width:1340px;
+    overflow-x: hidden;
+    
+    */
+    position: absolute;
+    top:0;
+    right:0;
+    left: 0;
+    bottom: 0;
+    z-index: -5;    
+}
+
 .deals_table{
     position: absolute;
-    top: 40%;
+    top: 30%;
+    border: solid;
+    border-color: black;
+    z-index: 1;
 }
 
 #dropdownAndTags{
@@ -49,7 +67,7 @@
     min-width: 230px;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px  rgb(255, 255, 255);
-    z-index: 1;
+    z-index: 2;
 }
 
 .dropdown-content p {
@@ -66,5 +84,95 @@
 }
 
 .dropdown p:hover {background-color: #ddd}
+
+.show {display:block;}
+
+#dropdayContainer{
+    position: absolute;
+    top : 40%;
+    left: 50%;
+}
+
+.dropdayButton:hover, .dropdayButton:focus {
+    background-color: rgb(255, 255, 255);
+}
+
+#dayInput {
+    font-size: 16px;
+   padding: 14px 20px 12px 45px;
+    border: none; 
+}
+
+.dropdayClass {
+    position: relative;
+    display: inline-block;  
+}
+#dropday{
+    overflow: Scroll;
+}
+
+.dropday-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px  rgb(255, 255, 255);
+    z-index: 1;
+}
+
+.dropday-content p {
+    color: rgb(0, 0, 0);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdayClass p:hover {background-color: #ddd}
+
+.show {display:block;}
+
+#dropDeliverContainer{
+    position: absolute;
+    top : 45%;
+    left: 50%;
+}
+
+.dropDeliverButton:hover, .dropDeliverButton:focus {
+    background-color: rgb(255, 255, 255);
+}
+
+#deliverInput {
+    font-size: 16px;
+   padding: 14px 20px 12px 45px;
+    border: none; 
+}
+
+.dropDeliverClass {
+    position: relative;
+    display: inline-block;  
+}
+#dropDeliver{
+    overflow: Scroll;
+}
+
+.dropDeliver-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px  rgb(255, 255, 255);
+    z-index: 1;
+}
+
+.dropDeliver-content p {
+    color: rgb(0, 0, 0);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropDeliverClass p:hover {background-color: #ddd}
 
 .show {display:block;}
