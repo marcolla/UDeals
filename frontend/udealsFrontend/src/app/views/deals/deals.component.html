@@ -1,5 +1,5 @@
 
-<button (click)='redirect();' class="redirectbutton"> POST DEAL </button>
+<button (click)='redirect();' class="redirectbutton"> CREATE NEW DEAL </button>
 
 <div id = "background">
   </div>
@@ -10,8 +10,7 @@
       <tbody>
 
   <tr id="dealListing" *ngFor="let deal of deals; let i=index" >
-
-    
+   
 
     <div class = "dealRow" (click)="moveToDetails($event, deal._id)"><td class="dealNo" width="2.5%" position="relative" >{{i+1}}</td>  <td class="dealOffer" width=10% position="relative">{{deal.offer}}</td> <td class="dealDay" width="10%" position = "relative">{{deal.details.day}}</td> <td class = "dealRest" width="15%" position="relative"> {{deal.details.name}}</td> <td class="dealDeli" width="5%" position = "relative">  {{deal.details.deliver}} </td> </div>
   </tr>
@@ -19,6 +18,7 @@
 
 </table>
 
+<div id= "tagbox">Filter by:</div>
 
 <div id = "dropdownAndTags">
   <div class="dropdown">
@@ -46,7 +46,7 @@
         <p id="a18" (click)="setTag('Other')">Other</p>
        </div>
   </div>
-</div>
+
 
 <div id = "dropdayContainer">
   <div class="dropdayClass">
@@ -77,6 +77,7 @@
       </div>
   </div>
 </div>
+</div>
 
 <div id = "resetButton">
   <button (click)="filterReset()" class="resetB">Reset Filter</button>
@@ -85,7 +86,7 @@
 
 
 
-  <button (click)="filterTag()" class="button">stuff</button>
+  <button (click)="filterTag()" class="button">APPLY</button>
 
 
 <!--
