@@ -1,4 +1,4 @@
-
+<div id = "background">
 <div id="dealDeets">
 <p>Offer: <input id = "offer" type = "text" readonly> </p>
 <p>Name: <input id = "name" type = "text" readonly>  </p>
@@ -10,12 +10,13 @@
 <p>Link: <input id = "link" type = "text" readonly > </p>
 <p>Recurring: <input id = "recurring" type = "text" readonly> </p>
 <p>Tags: <input id="tags" type="text" readonly > </p>
-</div>
 
 <div id="dealMod">
-<button (click)="editable()" id="editButton">Edit</button>
-<button (click)="makeDeletePopUp()" id="deleteButton">Delete</button>
+        <button (click)="editable()" id="editButton">Edit</button>
+        <button (click)="makeDeletePopUp()" id="deleteButton">Delete</button>
+        </div>
 </div>
+
 
 <div id = "putPopup" class="popup">
     <h2>Confirmation</h2>
@@ -32,3 +33,6 @@
             <br>
         <button id = "deletePopupButton" class="popupButton" (click) = "deleteDeal();redirect();" href = "#">Yes I'm Sure</button>
     </div>
+
+
+</div>
