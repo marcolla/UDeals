@@ -29,6 +29,13 @@ export class DealsComponent implements OnInit {
   ngOnInit() {
   }
 
+  redirect()
+  {
+  
+
+  var url = "http://localhost:4200/newdeal";
+location.href = url;
+  }
   
   postDeal() {
     var dealJSON = 

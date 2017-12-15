@@ -125,12 +125,25 @@ z-index: -5;
 
 .postbtn{
     border-radius: 5px;
+    font-family: 'Graphik';
+}
+
+.postbtn:hover, .postbtn:focus {
+    background-color:  #D7290C;
+    font-family: 'Graphik';
+    border-radius: 5px;
 }
 
 .redirectbutton{
     border-radius: 5px;
+    font-family: 'Graphik';
 }
 
+.redirectbutton:hover, .redirectbutton:focus {
+    background-color:  #D7290C;
+    font-family: 'Graphik';
+    border-radius: 5px;
+}
 #dropdownAndTags{
     position: relative;
     

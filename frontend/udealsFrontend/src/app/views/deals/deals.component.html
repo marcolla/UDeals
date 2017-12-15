@@ -1,14 +1,21 @@
+
+<button (click)='redirect();' class="redirectbutton"> POST DEAL </button>
+
 <div id = "background">
   </div>
 
 <table class ="deals_table">
+   
+    
+      <tbody>
 
   <tr id="dealListing" *ngFor="let deal of deals; let i=index" >
 
+    
 
-    <div class = "dealRow" (click)="moveToDetails($event, deal._id)"><td class="dealNo" >{{i+1}}</td>  <td class="dealOffer">{{deal.offer}}</td> <td class="dealDay">{{deal.details.day}}</td> <td class = "dealRest"> {{deal.details.name}}</td> <td class="dealDeli"> {{deal.details.deliver}} </td> </div>
+    <div class = "dealRow" (click)="moveToDetails($event, deal._id)"><td class="dealNo" width="1%" >{{i+1}}</td>  <td class="dealOffer" width=10% >{{deal.offer}}</td> <td class="dealDay" width="10%">{{deal.details.day}}</td> <td class = "dealRest" width="15%"> {{deal.details.name}}</td> <td class="dealDeli" width="5%">  {{deal.details.deliver}} </td> </div>
   </tr>
-
+</tbody>
 
 </table>
 
