@@ -35,31 +35,32 @@ tr:nth-child(odd) {
     background-color: #8f4747;
 }
 
+tr td:last-child{
+    width:1%;
+    white-space:nowrap;
+}
 
 td{
     border: 1px solid #dddddd;
     text-align: left;  
-
-    column-width: 150px;
-
+    /* column-width:120px;
+    word-break:break-all;} */
 }
+
+
 .deals_table{
     table-layout:fixed;
 
 
     border: 1px solid black;
     border-collapse: collapse;
-    top:50%;
-    left: 23%;
+
     color:white;
     font-family: 'Graphik';
-    position: absolute;
-    top: 30%;
+    position: relative;
     border: solid;
     border-color: black;
     z-index: -2;
-
-    right: 23%;
 
 }
 .redirectbutton:hover, .redirectbutton:focus {
