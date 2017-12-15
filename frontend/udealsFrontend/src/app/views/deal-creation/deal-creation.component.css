@@ -13,12 +13,14 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    border-radius: 5px;
+   
     border:2px solid #ddd;
     cursor: pointer;
     height:20px;
     width: 169px;
     
+    border-radius:20px/50px;
+    cursor: pointer;
 
 }
 #background{
@@ -43,6 +45,7 @@ z-index: -5;
 
 .dropbtn:hover, .dropbtn:focus {
     background-color: rgb(255, 255, 255);
+    cursor: pointer;
 }
 #myInput {
     font-size: 16px;
@@ -124,25 +127,30 @@ z-index: -5;
 }
 
 .postbtn{
-    border-radius: 5px;
+    border-radius:20px/50px;
+    cursor: pointer;
     font-family: 'Graphik';
 }
 
 .postbtn:hover, .postbtn:focus {
     background-color:  #D7290C;
     font-family: 'Graphik';
-    border-radius: 5px;
+    border-radius:20px/50px;
+    cursor: pointer;
 }
 
 .redirectbutton{
-    border-radius: 5px;
+    border-radius:20px/50px;
+    cursor: pointer;
     font-family: 'Graphik';
+
 }
 
 .redirectbutton:hover, .redirectbutton:focus {
     background-color:  #D7290C;
     font-family: 'Graphik';
-    border-radius: 5px;
+    border-radius:20px/50px;
+    cursor: pointer;
 }
 #dropdownAndTags{
     position: relative;
