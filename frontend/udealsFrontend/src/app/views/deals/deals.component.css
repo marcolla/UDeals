@@ -241,10 +241,11 @@ position:absolute;
 #tagbox{
 
 text-align:left;
-position: relative;
+position: absolute;
 background: #D7290C;
-
+float: left;
 width: 15%;
+top:40%;
 padding-top: .5%;
 padding-left: .5%;
 padding-bottom: 1.8%;
@@ -255,7 +256,6 @@ color: white;
 border: black;
 border-style:solid;
 z-index:1;
-bottom: 14%;
 
 
 }
