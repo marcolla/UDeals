@@ -10,6 +10,7 @@ export class DealDescriptionComponent implements OnInit {
   _apiSVC: UdealsService;
   dealID: String = (window.location.href).substr(28);
   dealJSON: any;
+  tagsArray: string[] = [];
 
   constructor(private _apiSvc: UdealsService) { 
         _apiSvc.findDeal(this.dealID).subscribe(y => {
@@ -35,6 +36,9 @@ export class DealDescriptionComponent implements OnInit {
 
   
   putDeal() {
+    document.getElementById("editButton").textContent = "Edit";
+    (<HTMLInputElement>document.getElementById("offer")).readOnly = true;  
+
     var dealJSON = 
     '{ "offer" : "' + (<HTMLInputElement>document.getElementById("offer")).value + 
     '", "details" : { "name": "' + (<HTMLInputElement>document.getElementById("name")).value + 
@@ -45,12 +49,28 @@ export class DealDescriptionComponent implements OnInit {
     '", "deliver": "' + (<HTMLInputElement>document.getElementById("deliver")).value +
     '", "link": "' + (<HTMLInputElement>document.getElementById("link")).value +
     '", "recurring": "' + (<HTMLInputElement>document.getElementById("recurring")).value +
-    '"}}';
+    '", "tags": [';
+    for (var i = 0; i < this.tagsArray.length; i++) {
+      dealJSON += '"' + this.tagsArray[i] + '"';
+      if (i < this.tagsArray.length - 1) {
+        dealJSON += ', ';
+      }
+    }
+    dealJSON += ']}}';
 
     console.log(dealJSON);
 
     this._apiSVC.putDeals(dealJSON).subscribe(y => {
     });
+  }
+
+  editable() {
+    if (document.getElementById("editButton").textContent == "Edit") {
+      (<HTMLInputElement>document.getElementById("offer")).readOnly = false; 
+      document.getElementById("editButton").textContent = "Save";
+    } else {
+      this.putDeal();
+    }
   }
 
 
