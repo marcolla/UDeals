@@ -87,7 +87,7 @@
         
   
       
-        <button (click)='postDeal();redirect();' class="postbtn"> POST </button>
+        <button (click)="makePostPopUp()" class="postbtn"> POST </button>
 
         
       
@@ -96,6 +96,14 @@
   
   
 
+                      </div>
+
+                      <div id = "postPopup" class="popup">
+                          <h2>Confirmation</h2>
+                              <a class="close" (click) = "makepostPopUp()">&times;</a>
+                              <div> Are you sure you want to save your changes?</div>
+                              <br>
+                          <button id = "postPopupButton" class="popupButton" (click) = "postDeal();redirect();" href = "#">Yes I'm Sure</button>
                       </div>
 
                      

@@ -53,12 +53,8 @@ export class DealCreationComponent implements OnInit {
     document.getElementById("myDropdown").classList.toggle("show");
   }
 
-  redirect()
-  {
-  
-
-  var url = "http://localhost:4200/deals";
-location.href = url;
+  redirect() {
+    location.href = "#"
   }
   
   filterFunction() {
@@ -157,6 +153,10 @@ location.href = url;
   }
 
   
+  makePostPopUp() {
+    var popup = document.getElementById("postPopup");
+    popup.classList.toggle("show");
+  }
 
 
 }
