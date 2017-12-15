@@ -13,6 +13,7 @@ export class DealDescriptionComponent implements OnInit {
   tagsArray: string[] = [];
 
   constructor(private _apiSvc: UdealsService) { 
+    this._apiSVC = _apiSvc;
         _apiSvc.findDeal(this.dealID).subscribe(y => {
           this.dealJSON = y; 
 
@@ -37,7 +38,14 @@ export class DealDescriptionComponent implements OnInit {
   
   putDeal() {
     document.getElementById("editButton").textContent = "Edit";
-    (<HTMLInputElement>document.getElementById("offer")).readOnly = true;  
+    (<HTMLInputElement>document.getElementById("name")).readOnly = true; 
+    (<HTMLInputElement>document.getElementById("address")).readOnly = true;
+    (<HTMLInputElement>document.getElementById("day")).readOnly = true;
+    (<HTMLInputElement>document.getElementById("time")).readOnly = true;
+    (<HTMLInputElement>document.getElementById("description")).readOnly = true;
+    (<HTMLInputElement>document.getElementById("deliver")).readOnly = true;
+    (<HTMLInputElement>document.getElementById("link")).readOnly = true;
+    (<HTMLInputElement>document.getElementById("recurring")).readOnly = true; 
 
     var dealJSON = 
     '{ "offer" : "' + (<HTMLInputElement>document.getElementById("offer")).value + 
@@ -66,7 +74,14 @@ export class DealDescriptionComponent implements OnInit {
 
   editable() {
     if (document.getElementById("editButton").textContent == "Edit") {
-      (<HTMLInputElement>document.getElementById("offer")).readOnly = false; 
+      (<HTMLInputElement>document.getElementById("name")).readOnly = false;
+      (<HTMLInputElement>document.getElementById("address")).readOnly = false;
+      (<HTMLInputElement>document.getElementById("day")).readOnly = false;
+      (<HTMLInputElement>document.getElementById("time")).readOnly = false;
+      (<HTMLInputElement>document.getElementById("description")).readOnly = false;
+      (<HTMLInputElement>document.getElementById("deliver")).readOnly = false;
+      (<HTMLInputElement>document.getElementById("link")).readOnly = false;
+      (<HTMLInputElement>document.getElementById("recurring")).readOnly = false; 
       document.getElementById("editButton").textContent = "Save";
     } else {
       this.putDeal();
