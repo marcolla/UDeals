@@ -5,19 +5,64 @@
 .redirectbutton{
    border-radius:20px/50px;
     font-family: 'Graphik';
+    font-size: 120%;
     position:absolute;
     bottom:0%;
+    height:8%;
+    width:14%;
+    bottom: 25%;
     cursor: pointer;
+    left: 71%;
+    color:white;
 
 
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iIzU5YTNlMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0MjdhYTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgb(202, 199, 199) 1%, rgb(114, 115, 116) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#59A3E0), color-stop(100%,#427AA8));
+    background: -webkit-linear-gradient(top, rgb(202, 199, 199) 1%, rgb(114, 115,116));
+    background: -o-linear-gradient(top,  rgb(202, 199, 199) 1%, rgb(114, 115, 116));
+    background: -ms-linear-gradient(top,   rgb(202, 199, 199) 1%, rgb(114, 115, 116));
+    background: linear-gradient(to bottom,    rgb(202, 199, 199) 1%, rgb(114, 115, 116));
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59A3E0', endColorstr='#427AA8',GradientType=0 );
 
-
-
-
-
-
-
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+    box-shadow: 0 1px 0 rgba(255,255,255, 0.3), inset 0 1px 0 rgba(255,255,255, 0.3);
 }
+
+
+
+
+.redirectbutton:hover, .redirectbutton:focus {
+   
+    font-family: 'Graphik';
+        border-radius:20px/50px;
+        cursor: pointer;
+        text-decoration: none;
+        filter: none;
+        background: -webkit-linear-gradient(top, #D7290C 1%, rgb(136, 24, 7));
+        
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 tr:nth-child(even) {
     background-color: #D7290C;
@@ -57,12 +102,6 @@ td{
     
 
 
-}
-.redirectbutton:hover, .redirectbutton:focus {
-    background-color:  #D7290C;
-    font-family: 'Graphik';
-        border-radius:20px/50px;
-        cursor: pointer;
 }
 
 #dropbtn:hover, #dropbtn:focus {
