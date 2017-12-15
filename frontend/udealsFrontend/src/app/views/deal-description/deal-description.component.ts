@@ -24,17 +24,33 @@ export class DealDescriptionComponent implements OnInit {
           (<HTMLInputElement>document.getElementById("day")).value = y.details.day;
           (<HTMLInputElement>document.getElementById("time")).value = y.details.time;
           (<HTMLInputElement>document.getElementById("description")).value = y.details.description;
+
           (<HTMLInputElement>document.getElementById("deliver")).value = y.details.deliver;
+          console.log("Deliver = " + y.details.deliver)
+          console.log((<HTMLInputElement>document.getElementById("deliver")).checked);
+          if(y.details.deliver == true){
+            (<HTMLInputElement>document.getElementById("deliver")).checked = true;
+          }
+          console.log((<HTMLInputElement>document.getElementById("deliver")).checked);
+
           (<HTMLInputElement>document.getElementById("link")).value = y.details.link;
+
           (<HTMLInputElement>document.getElementById("recurring")).value = y.details.recurring;
+                    
+          console.log("Recurring = " + y.details.recurring)
+          if(y.details.recurring == true){
+            (<HTMLInputElement>document.getElementById("recurring")).checked = true;
+          }
+
+          (<HTMLInputElement>document.getElementById("deliver")).disabled = true;
+          (<HTMLInputElement>document.getElementById("recurring")).disabled = true;
+
           (<HTMLInputElement>document.getElementById("tags")).value = y.details.tags;
         });
   }
 
   ngOnInit() {
   }
-
-
   
   putDeal() {
     document.getElementById("editButton").textContent = "Edit";
@@ -43,9 +59,9 @@ export class DealDescriptionComponent implements OnInit {
     (<HTMLInputElement>document.getElementById("day")).readOnly = true;
     (<HTMLInputElement>document.getElementById("time")).readOnly = true;
     (<HTMLInputElement>document.getElementById("description")).readOnly = true;
-    (<HTMLInputElement>document.getElementById("deliver")).readOnly = true;
+    (<HTMLInputElement>document.getElementById("deliver")).disabled = true;
     (<HTMLInputElement>document.getElementById("link")).readOnly = true;
-    (<HTMLInputElement>document.getElementById("recurring")).readOnly = true; 
+    (<HTMLInputElement>document.getElementById("recurring")).disabled = true; 
 
     var dealJSON = 
     '{ "offer" : "' + (<HTMLInputElement>document.getElementById("offer")).value + 
@@ -79,9 +95,9 @@ export class DealDescriptionComponent implements OnInit {
       (<HTMLInputElement>document.getElementById("day")).readOnly = false;
       (<HTMLInputElement>document.getElementById("time")).readOnly = false;
       (<HTMLInputElement>document.getElementById("description")).readOnly = false;
-      (<HTMLInputElement>document.getElementById("deliver")).readOnly = false;
+      (<HTMLInputElement>document.getElementById("deliver")).disabled = false;
       (<HTMLInputElement>document.getElementById("link")).readOnly = false;
-      (<HTMLInputElement>document.getElementById("recurring")).readOnly = false; 
+      (<HTMLInputElement>document.getElementById("recurring")).disabled = false; 
       document.getElementById("editButton").textContent = "Save";
     } else {
       this.makePutPopUp();
@@ -121,5 +137,29 @@ export class DealDescriptionComponent implements OnInit {
     location.href = "#";
   }
 
+
+  deliver(){
+    if((<HTMLInputElement>document.getElementById("deliver")).checked){
+      (<HTMLInputElement>document.getElementById("deliver")).value = "true";
+      //(<HTMLInputElement>document.getElementById("deliver")).checked = false;
+    }
+    else{
+      (<HTMLInputElement>document.getElementById("deliver")).value = "false";
+      //(<HTMLInputElement>document.getElementById("deliver")).checked = true;
+    }
+    console.log((<HTMLInputElement>document.getElementById("deliver")).value);
+  }
+
+  recurring(){
+    if((<HTMLInputElement>document.getElementById("recurring")).checked){
+      (<HTMLInputElement>document.getElementById("recurring")).value = "true";
+      //(<HTMLInputElement>document.getElementById("deliver")).checked = false;
+    }
+    else{
+      (<HTMLInputElement>document.getElementById("recurring")).value = "false";
+      //(<HTMLInputElement>document.getElementById("deliver")).checked = true;
+    }
+    console.log((<HTMLInputElement>document.getElementById("recurring")).value);
+  }
 
 }

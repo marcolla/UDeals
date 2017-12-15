@@ -100,6 +100,10 @@ myFunction3() {
 }
 
 filterReset() {
+  document.getElementById("dropbtn").textContent = "Categoeries";
+  document.getElementById("dropdayButton").textContent = "Day";
+  document.getElementById("dropDeliverButton").textContent = "Deliver?";
+  
   this._apiSvc.getDeals().subscribe(x => {
     this.deals = x;
   });
@@ -131,14 +135,22 @@ setTag(input) {
   this.tag = input;
   document.getElementById("myDropdown").classList.toggle("show");
   console.log(this.tag);
-  document.getElementById("dropbtn").textContent = input;
+  if(input == "any") {
+    document.getElementById("dropbtn").textContent = "Categoeries";
+  } else {
+    document.getElementById("dropbtn").textContent = input;
+  }
 }
 
 setDay(input) {
   this.day = input;
   document.getElementById("dropday").classList.toggle("show");
   console.log(this.tag);
-  document.getElementById("dropdayButton").textContent = input;
+  if(input == "any") {
+    document.getElementById("dropdayButton").textContent = "Day";
+  } else {
+    document.getElementById("dropdayButton").textContent = input;
+  }
 }
 
 setDeliver(input) {
@@ -149,6 +161,8 @@ setDeliver(input) {
     document.getElementById("dropDeliverButton").textContent = "Yes";
   } else if (input == "false") {
     document.getElementById("dropDeliverButton").textContent = "No";
+  } else {
+    document.getElementById("dropDeliverButton").textContent = "Deliver?";
   }
 }
 
