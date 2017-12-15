@@ -12,7 +12,6 @@ export class DealsComponent implements OnInit {
   tag: String; 
   day: any;
   deliver: any;
-  options: String[] = ["Burgers", "Pizza"];
 
   constructor(private _apiSvc: UdealsService) {
     this.tag = "any";

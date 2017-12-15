@@ -84,10 +84,20 @@ export class DealDescriptionComponent implements OnInit {
       (<HTMLInputElement>document.getElementById("recurring")).readOnly = false; 
       document.getElementById("editButton").textContent = "Save";
     } else {
-      this.putDeal();
+      this.makePutPopUp();
+
     }
   }
 
+  makePutPopUp() {
+    var popup = document.getElementById("putPopup");
+    popup.classList.toggle("show");
+  }
+
+  makeDeletePopUp() {
+    var popup = document.getElementById("deletePopup");
+    popup.classList.toggle("show");
+  }
 
 
   deleteDeal() {
@@ -105,6 +115,10 @@ export class DealDescriptionComponent implements OnInit {
 
     this._apiSVC.findDeal(this.dealID).subscribe(y => {y = dealJSON;});
     console.log(dealJSON);
+  }
+
+  redirect() {
+    location.href = "#";
   }
 
 
